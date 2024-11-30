@@ -5,4 +5,4 @@ The upload/edit page will basically be the same, except that the edit page will 
 * Description of the Script
 * json upload.
 
-**Notes: Editing a script should only make a new version if any characters changed from the previous version. If only the description was updated, it should not count as a new version, and the Title/Author/Uploader fields will not be editable.
+**Notes:** Editing a script should only make a new version if any characters changed from the previous version. If only the description was updated, it should not count as a new version, and the Title/Author/Uploader fields will not be editable.
