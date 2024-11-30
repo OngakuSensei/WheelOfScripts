@@ -5,6 +5,7 @@
 * Character Image *(Wedge has a good list for his Wiki project that is copyright-free, might not need to have this though and just name the images the same as the character identifier to save db space.)*
 * Character Type *(Townsfolk, Outsider, Minion, Demon, Traveler, Fabled)*
 * Character Description
+* Sort Order *(The result of running the Description field through the scriptSortOrder() function)*
 * Character Source *(Base 3, Kickstarter Experimental, Unreleased Experimental)*
 
 ## Jinx Database
