@@ -1,1 +1,2 @@
-
+## Public User Profile
+This page should display information about the user selected. Show their display name, show their profile picture, show their description, and then show a list of all the scripts that user has uploaded that are public. Should probably be a way to report a profile for offensive content.
