@@ -1,1 +1,8 @@
-
+## Script Display Page
+The page should display the title of the script at the top, along with the author. If there are any other scripts that are identical, in smaller text under the title, it will have "(Also known as X by Y, etc)" for each identical script in the database.
+Underneath that, if the script has multiple versions, there should be a dropdown for the user to be able to select a different version, probably indicated by "Version X, Uploaded <datetime>".
+Then using the character data, it will generate a script image with all the characters in the right order, any fabled, and any jinxes, as well as the description.
+Underneath that, there will be an area where all the currently enabled Fabled are selected, and the player can use checkboxes to modify the fabled.
+Then, another area with the same thing but for players to modify the travelers.
+Finally, a button that when pressed, will generate a json file for the user to download that has the correct title, author, and characters.
+Should probably also be an option to report a script for offensive content.
