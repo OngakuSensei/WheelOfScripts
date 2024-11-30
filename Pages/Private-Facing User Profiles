@@ -1,1 +1,3 @@
-
+## Private User Profile
+This should be a user's view of their own profile. It will display the same information, but have the option to edit, as well as the option to upload, edit, or delete a script.
+There should also be a "spin history" so they can look at their past spins.  And a way to reset all of their spins and get a fresh wheel.
