@@ -8,7 +8,6 @@
 * Added to Public wheel *(Y/N)*
 * Teensy *(Auto-detected, determines whether the script is for a full game or for teensy)*
 * Description *(Any info about the script should go here - Any stormcatcher protections, any bootlegger rules, etc)*
-* Sort Order *(The result of running the Description field through the scriptSortOrder() function)*
 * Full Json Text *(This is just the full text of the uploaded json for parsing later)*
 * Fabled List *(csv list of Fabled)*
 * Traveler List *(If any defined travelers are invluded, they are added here as a csv)*
