@@ -33,7 +33,7 @@ def import_characters(session, json_data):
         if edition in ['tb', 'bmr', 'snv']:
             character_source = 'Base 3'
         else:
-            character_source = 'Kickstarter Experimental'
+            character_source = 'Kickstarter/Experimental'
 
         # Create character object
         character = Character(
