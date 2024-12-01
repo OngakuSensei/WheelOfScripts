@@ -14,7 +14,6 @@ def spinWheel(ids, weights):
   rand_num = random.uniform(0, total)
 
   # Use binary search to find the index where the random number fits
-
   index = bisect.bisect_left(cumulative_weights, rand_num)
 
   return ids[index]
