@@ -14,4 +14,4 @@ This is a detail of what happens after a user presses the button to spin the whe
 3. The script goes to the weight database, and pulls the weights for each script to be included from the column associated with their account.
 4. Then, a random selection is made from a table containing each script ID a number of times equal to its current weight.
 5. The algorithm is applied to the weights of EVERY script, not just the filtered ones, after the winner is selected, and those weights are re-written into the database.
-6. The winning script is displayed to the user, and the record of the spin (Date/time, User, and Script selected) is written to the Spins databse.
+6. The winning script is displayed to the user, and the record of the spin (Date/time, User, and Script selected) is written to the Spins database.
