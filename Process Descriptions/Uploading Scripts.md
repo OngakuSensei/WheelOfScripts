@@ -1,14 +1,15 @@
 # Handling Script Uploading
 Here is the process I'm envisioning for uploading a script:
-1. The user is brought to a page with just an upload box for a json script and a submit button. The form validates that it is a correct json file before beginning to process it.
+1. The user is brought to a page with just an upload box for a json script and a submit button.
 2. The json is read.
+    * First, it checks if it is a valid json file, and then a valid BotC script. If not, it rejects it and sends the player back to the upload form.
     * If there is a script name, that is pre-filled into the field on the next page
     * If there is an author, that is pre-filled into the field on the next page.
     * If there is a logo url, that is pre-filled
     * If there is a background url, that is pre-filled
     * If there is a predefined night order, that is passed through invisibly to the next page.
 
-3. After all of the read information is pre-filled into the form, the user can see the form. It has the following fields:
+4. After all of the read information is pre-filled into the form, the user can see the form. It has the following fields:
     * Script Title
     * Checkbox to verify they are the script's author, default checked. If not, the Author field becomes visible.
     * On the left side of the page, a script image will be put in place using the json info to display all of the characters in the right order.
