@@ -7,6 +7,64 @@ from datetime import datetime
 # Create a base class for declarative models
 Base = declarative_base()
 
+class Character(Base):
+    """
+    Character table definition representing Blood on the Clocktower characters
+    """
+    __tablename__ = 'characters'
+
+    id = sa.Column(sa.Integer, primary_key=True, autoincrement=True)
+    identifier = sa.Column(sa.String(100), unique=True, nullable=False)
+    name = sa.Column(sa.String(255), nullable=False)
+    character_type = sa.Column(sa.Enum(
+        'Townsfolk', 
+        'Outsider', 
+        'Minion', 
+        'Demon', 
+        'Traveler', 
+        'Fabled'
+    ), nullable=False)
+    description = sa.Column(sa.Text)
+    sort_order = sa.Column(sa.Integer)
+    character_source = sa.Column(sa.Enum(
+        'Base 3', 
+        'Kickstarter Experimental', 
+        'Unreleased Experimental'
+    ))
+
+    # Relationships
+    jinxes_as_char1 = relationship("Jinx", 
+                                   foreign_keys="[Jinx.character_id_1]", 
+                                   back_populates="character_1")
+    jinxes_as_char2 = relationship("Jinx", 
+                                   foreign_keys="[Jinx.character_id_2]", 
+                                   back_populates="character_2")
+
+class Jinx(Base):
+    """
+    Jinx table definition representing character interactions
+    """
+    __tablename__ = 'jinxes'
+
+    id = sa.Column(sa.Integer, primary_key=True, autoincrement=True)
+    character_id_1 = sa.Column(sa.Integer, sa.ForeignKey('characters.id'), nullable=False)
+    character_id_2 = sa.Column(sa.Integer, sa.ForeignKey('characters.id'), nullable=False)
+    description = sa.Column(sa.Text, nullable=False)
+
+    # Relationships
+    character_1 = relationship("Character", 
+                               foreign_keys=[character_id_1], 
+                               back_populates="jinxes_as_char1")
+    character_2 = relationship("Character", 
+                               foreign_keys=[character_id_2], 
+                               back_populates="jinxes_as_char2")
+
+    # Ensure no duplicate jinx combinations
+    __table_args__ = (
+        sa.UniqueConstraint('character_id_1', 'character_id_2', 
+                            name='_character_jinx_uc'),
+    )
+
 class User(Base):
     """
     User table definition representing user information
