@@ -8,12 +8,13 @@ def spinWheel(ids, weights):
   for weight in weights:
     total += weight
     cumulative_weights.append(total)
+    print(f"Just Added: {weight}\nTotal: {total}")
 
-# Generate a random number between 0 and weight
-rand_num = random.uniform(0, total)
+  # Generate a random number between 0 and weight
+  rand_num = random.uniform(0, total)
 
-# Use binary search to find the index where the random number fits
+  # Use binary search to find the index where the random number fits
 
-index = bisect.bisect_left(cumulative_weights, rand_num)
+  index = bisect.bisect_left(cumulative_weights, rand_num)
 
-return ids[index]
+  return ids[index]
