@@ -28,8 +28,7 @@ class Character(Base):
     sort_order = sa.Column(sa.Integer)
     character_source = sa.Column(sa.Enum(
         'Base 3', 
-        'Kickstarter Experimental', 
-        'Unreleased Experimental'
+        'Experimental'
     ))
 
     # Relationships
