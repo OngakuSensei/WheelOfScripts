@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Character Display</title>
+</head>
+<body>
+    <div class="container">
+        {% for category, char_list in characters.items() %}
+            {% if char_list %}
+                <div class="section">
+                    <div class="header" style="background-color: {{ colors[category] }};">
+                        <h2>{{ category.capitalize() }}</h2>
+                    </div>
+                    <div class="grid">
+                        {% for character in char_list %}
+                            <div class="character-card">
+                                <div class="image">
+                                    <img src="{{ url_for('static', filename='img/char_img/' + character['identifier'] + '.png') }}" alt="{{ character['name'] }}">
+                                </div>
+                                <div class="info">
+                                    <h3 style="color: {{ colors[category] }}">{{ character['name'] }}</h3>
+                                    <p>{{ character['description'] }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% if jinxes %}
+            <div class="section">
+                <div class="header" style="background-color: {{ colors['jinxes'] }};">
+                    <h2>Jinxes</h2>
+                </div>
+                <div class="grid">
+                    {% for jinx in jinxes %}
+                        <div class="jinx-card">
+                            <div class="image">
+                                <img src="{{ url_for('static', filename='img/char_img/' + jinx['char1']['identifier'] + '.png') }}" alt="{{ jinx['char1']['name'] }}">
+                                <img src="{{ url_for('static', filename='img/char_img/' + jinx['char2']['identifier'] + '.png') }}" alt="{{ jinx['char2']['name'] }}">
+                            </div>
+                            <div class="info">
+                                <p>{{ jinx['description'] }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
