@@ -36,6 +36,7 @@ def process_data(characters, jinxes):
     return grouped_characters, grouped_jinxes
 
 @app.route('/')
+"""
 def index():
     # Example Data Arrays
     characters = [
@@ -49,7 +50,7 @@ def index():
     grouped_characters, grouped_jinxes = process_data(characters, jinxes)
 
     return render_template('index.html', characters=grouped_characters, jinxes=grouped_jinxes, colors=COLORS)
-
+"""
 if __name__ == '__main__':
     app.run(debug=True)
 // JavaScript Document
