@@ -7,20 +7,20 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/* Styles for the Script Image display on the Script Info page */
 /* General container settings */
-.container {
+.scriptDisplayContainer {
     max-width: 960px;
     margin: 0 auto;
 }
 
 /* Section styling */
-.section {
+.scriptSection {
     margin-bottom: 40px;
 }
 
 /* Header style with color and bold text */
-.header {
+.scriptHeader {
     padding: 10px;
     color: white;
     text-align: center;
@@ -30,7 +30,7 @@ body {
 }
 
 /* Flexbox grid for characters */
-.grid {
+.scriptGrid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -51,26 +51,26 @@ body {
 }
 
 /* Image styling for character images */
-.image img {
+.scriptImage img {
     width: 65px;
     height: 65px;
     margin: 5px;
 }
 
 /* Info section inside the character card */
-.info {
+.scriptCharacterInfo {
     padding: 10px;
 }
 
 /* Character name styling */
-.info h3 {
+.scriptCharacterInfo h3 {
     margin: 0;
     font-size: 18px;
     font-weight: 500;
 }
 
 /* Ability description styling */
-.info p {
+.scriptCharacterInfo p {
     font-size: 14px;
     margin-top: 5px;
 }
