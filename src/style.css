@@ -52,8 +52,8 @@ body {
 
 /* Image styling for character images */
 .image img {
-    width: 100px;
-    height: 100px;
+    width: 65px;
+    height: 65px;
     margin: 5px;
 }
 
