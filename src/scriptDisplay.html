@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel of Scripts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Wheel of Scripts</h1>
+    </header>
+
+    <main class="scriptDisplayContainer">
+        <div class="scriptDisplayLeft">
+            <!-- Left section to display the script image -->
+            <div id="script-display"></div>
+        </div>
+
+        <div class="scriptDisplayRight">
+            <!-- Right section for script name, author, and additional details -->
+            <h2 id="script-name"></h2>
+            <span id="script-author"></span>
+
+            <div id="description-section" class="hidden">
+                <h3>Description</h3>
+                <p id="script-description"></p>
+            </div>
+
+            <div id="also-known-as-section" class="hidden">
+                <h3>Also Known As</h3>
+                <div id="also-known-as-list"></div>
+            </div>
+
+            <div>
+                <h3>Fabled</h3>
+                <div id="fabled-container"></div>
+            </div>
+
+            <div>
+                <h3>Travelers</h3>
+                <div id="travelers-container"></div>
+            </div>
+
+            <button id="download-json">Download .json</button>
+        </div>
+    </main>
+
+    <script src="scripts/scriptDisplay.js"></script>
+</body>
+</html>

@@ -1,32 +1,131 @@
 /* Apply the Roboto font globally */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+/* Global Color Theme Variables */
+:root {
+    --background-color: #201330; /* Dark background */
+    --text-color: #ecdacd;       /* Light text */
+    --accent-color: #8e85b0;     /* Accent color */
+    --secondary-color: #cfaa94;  /* Secondary background */
+    --highlight-color: #a08a00;  /* Highlight/gold color */
+    --border-color: #ddd;        /* Border color */
+}
+
+/* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
 }
-/* Styles for the Script Image display on the Script Info page */
+
 /* General container settings */
 .scriptDisplayContainer {
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
 }
 
-/* Section styling */
-.scriptSection {
-    margin-bottom: 40px;
+/* Left section for script image */
+.scriptDisplayLeft {
+    flex: 1;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Header style with color and bold text */
-.scriptHeader {
-    padding: 10px;
-    color: white;
+/* Right section for script info */
+.scriptDisplayRight {
+    flex: 1.5;
+    background-color: var(--accent-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Header style */
+header h1 {
+    color: var(--highlight-color);
     text-align: center;
-    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+/* Script Name */
+#script-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--highlight-color);
+}
+
+/* Script Author */
+#script-author {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Section headers */
+h3 {
+    color: var(--highlight-color);
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* Description section */
+#description-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Also Known As section */
+#also-known-as-list a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 0;
+}
+#also-known-as-list a:hover {
+    color: var(--highlight-color);
+}
+
+/* Fabled and Travelers fields */
+#fabled-container, #travelers-container {
+    border: 1px solid var(--text-color);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    min-height: 60px;
+}
+
+/* Bubble style */
+.bubble {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+/* Download button */
+#download-json {
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+#download-json:hover {
+    background-color: var(--secondary-color);
 }
 
 /* Flexbox grid for characters */
@@ -36,13 +135,13 @@ body {
     gap: 10px;
 }
 
-/* Style for individual character cards */
+/* Character card styles */
 .character-card, .jinx-card {
     display: flex;
     width: calc(50% - 10px); /* 2 cards across */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--text-color);
     overflow: hidden;
 }
 
@@ -50,7 +149,7 @@ body {
     width: 100%;
 }
 
-/* Image styling for character images */
+/* Character image */
 .scriptImage img {
     width: 65px;
     height: 65px;
@@ -67,10 +166,28 @@ body {
     margin: 0;
     font-size: 18px;
     font-weight: 500;
+    color: var(--background-color);
 }
 
 /* Ability description styling */
 .scriptCharacterInfo p {
     font-size: 14px;
     margin-top: 5px;
+    color: var(--background-color);
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .scriptDisplayContainer {
+        flex-direction: column;
+    }
+
+    .scriptDisplayLeft, .scriptDisplayRight {
+        width: 100%;
+    }
 }
