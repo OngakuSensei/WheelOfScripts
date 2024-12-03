@@ -71,7 +71,7 @@ class User(Base):
     __tablename__ = 'users'
 
     id = sa.Column(sa.Integer, primary_key=True, autoincrement=True, start=1)
-    discord_auth_token = sa.Column(sa.String(255), nullable=False, unique=True)
+    discord_auth_token = sa.Column(sa.String(255), nullable=False, unique=True) # We need a way to encrypt these securely so that if someone DOES get in, they don't have a bunch of discord auth codes to do damage with.
     is_admin = sa.Column(sa.Enum('Y', 'N'), default='N')
     username = sa.Column(sa.String(100), nullable=False)
     display_name = sa.Column(sa.String(100))
