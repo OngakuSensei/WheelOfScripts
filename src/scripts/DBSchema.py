@@ -84,9 +84,9 @@ class User(Base):
     favorite_scripts = sa.Column(sa.ARRAY(sa.Integer))  # List of Script IDs
 
     # Personal Wheel Odds
-    recency_bias = sa.Column(sa.Integer, default=9500)  # 0-10000 scale
-    frequency_bias = sa.Column(sa.Integer, default=9900)  # 0-10000 scale
-    author_bias = sa.Column(sa.Integer, default=0)  # 0-10000 scale
+    recency_bias = sa.Column(sa.Integer, default=9500)  # 0-9999 scale
+    frequency_bias = sa.Column(sa.Integer, default=9900)  # 0-9999 scale
+    author_bias = sa.Column(sa.Integer, default=0)  # 0-9999 scale
     use_author_bias = sa.Column(sa.Boolean, default=False) # Lets user decide whether to use this attribute or not
 
     # Relationships
